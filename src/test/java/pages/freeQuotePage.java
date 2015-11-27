@@ -60,7 +60,7 @@ public class freeQuotePage {
     public void captureDrag(){
         JavascriptExecutor js = (JavascriptExecutor) driver;
 
-        String script = "document.getElementsByClassName(\"intro\").setAttribute(class, noUi-handle noUi-handle-lower noUi-active);";
+        String script = "document.getElementsByClassName(\"noUi-handle noUi-handle-lower\").setAttribute(\"class\", \"noUi-handle noUi-handle-lower noUi-active\")";
 
         js.executeScript(script,sliderPointer);
 
