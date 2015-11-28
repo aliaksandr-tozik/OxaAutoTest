@@ -9,6 +9,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 import java.util.concurrent.TimeUnit;
 
+import static org.junit.Assert.assertTrue;
+
 
 /**
  * Created by zholnerkevichns on 26.11.2015.
@@ -36,8 +38,8 @@ public class freeQuotePage {
     static final String BTN_ATTACH_FILE = "//input[contains(@class ,'files-input')]";
     static final String SLIDER_CAPTURE_XPATH = "//div[contains(@class ,'noUi-origin')]";
     static final String SLIDER_POINTER_XPATH = "//div[contains(@class ,'noUi-origin')]//div";
-    static final String ERROR_MESSAGE_NAME = "//div[contains(@id ,'request-error-message-name')]//div";
-    static final String ERROR_MESSAGE_EMAIL = "//div[contains(@id ,'request-error-message-email')]//div";
+    static final String ERROR_MESSAGE_NAME = "//div[contains(@id ,'request-error-message-name')]";
+    static final String ERROR_MESSAGE_EMAIL = "//div[contains(@id ,'request-error-message-email')]";
 
     @FindBy(xpath = FIELD_NAME_XPATH)         WebElement fieldName;
     @FindBy (xpath = FIELD_COMPANY_XPATH)     WebElement fieldCompany;
@@ -74,8 +76,20 @@ public class freeQuotePage {
     }
 
     public void mandatoryFields(){
+        btnSend.click();
+            try {
+            Thread.sleep(2000);
+            } catch (InterruptedException ex) {}
 
+        assertTrue(errorMsgName.getText().contains("Enter your name"));
 
+        fieldName.sendKeys("Mikalai");
+        btnSend.click();
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException ex) {}
+
+        assertTrue(errorMsgEmail.getText().contains("Enter your email"));
     }
 
     public void fileAttach(){
@@ -94,9 +108,5 @@ public class freeQuotePage {
     public void formReset(){
         btnReset.click();
     }
-
-
-
-
 
 }
