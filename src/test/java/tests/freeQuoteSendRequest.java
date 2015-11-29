@@ -1,5 +1,6 @@
 package tests;
 
+import check.driverWait;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -21,6 +22,7 @@ public class freeQuoteSendRequest {
     private WebDriver driver;
     private String baseURL;
     private freeQuotePage freeQuotePage;
+
 
 
     @Before

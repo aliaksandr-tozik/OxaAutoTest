@@ -1,5 +1,6 @@
 package pages;
 
+import check.driverWait;
 import check.elementFind;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,7 +19,7 @@ import static org.junit.Assert.assertTrue;
 public class freeQuotePage {
 
     WebDriver driver;
-    private elementFind check;
+    private check.driverWait driverWait;
     public freeQuotePage(WebDriver driver) {
         this.driver = driver;
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
@@ -77,18 +78,10 @@ public class freeQuotePage {
 
     public void mandatoryFields(){
         btnSend.click();
-            try {
-            Thread.sleep(2000);
-            } catch (InterruptedException ex) {}
-
+        driverWait.wait(3000);
         assertTrue(errorMsgName.getText().contains("Enter your name"));
-
         fieldName.sendKeys("Mikalai");
         btnSend.click();
-            try {
-                Thread.sleep(2000);
-            } catch (InterruptedException ex) {}
-
         assertTrue(errorMsgEmail.getText().contains("Enter your email"));
     }
 
@@ -109,4 +102,8 @@ public class freeQuotePage {
         btnReset.click();
     }
 
+
+
 }
+
+
