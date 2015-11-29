@@ -1,4 +1,4 @@
-package tests;
+package tests.freeQuote;
 
 import check.driverWait;
 import org.junit.After;

@@ -1,30 +1,30 @@
-package tests;
+package tests.contacts;
 
+import check.elementFind;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
-import pages.freeQuotePage;
 import java.util.concurrent.TimeUnit;
-import static org.junit.Assert.assertTrue;
 
-public class freeQuoteMandatoryFields {
+/**
+ * Created by zholnerkevichns on 29.11.2015.
+ */
+public class contactsMapTest {
     private WebDriver driver;
     private String baseURL;
-    private pages.freeQuotePage freeQuotePage;
+    private pages.contactsPage contactsPage;
 
 
     @Before
     public void setUP() {
         driver = new FirefoxDriver();
         driver.manage().window().maximize();
-        baseURL = "http://redesign-qa.oxagile.com/free-quote/";
+        baseURL = "http://redesign-qa.oxagile.com/contacts/";
         driver.get(baseURL);
-        freeQuotePage = PageFactory.initElements(driver, freeQuotePage.class);
+        contactsPage = PageFactory.initElements(driver, pages.contactsPage.class);
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 
     }
@@ -32,7 +32,9 @@ public class freeQuoteMandatoryFields {
 
     @Test
     public void sendOnlineRequest(){
-        freeQuotePage.mandatoryFields();
+        contactsPage.waitForPageLoad();
+        contactsPage.mapCheck();
+
     }
 
 
