@@ -1,10 +1,12 @@
 package pages;
 
-import org.openqa.selenium.By;
+//import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
+/**
+ * @author Aliaksandr Tozik
+ */
 public class IndustriesPage {
 	
 	public WebDriver driver;
@@ -16,6 +18,7 @@ public class IndustriesPage {
 	private static final String TECHNOLOGY_LINK = "//a[contains(@title, 'IT industry software company')]";
 	private static final String EDUCATION_LINK = "//a[contains(@title, 'E-learning software development')]";
 	private static final String FINANCE_LINK = "//a[contains(@title, 'Finance web application')]";
+	private static final String TITLE_XPATH = "//title";
 	
 	@FindBy(xpath=MEDIA_LINK)
 	WebElement mediaHyperlink;
@@ -36,6 +39,9 @@ public class IndustriesPage {
 	}
 	public void openIndustriesPage(){
 		driver.get(URL);
+	}
+	public String getTitleXpath(){
+		return TITLE_XPATH;
 	}
 	
 	public String getTitle(){

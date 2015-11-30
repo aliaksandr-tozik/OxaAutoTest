@@ -1,10 +1,10 @@
 package tests;
 
+//import check.driverWait;
+//import pages.EducationIndustriesPage;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
-
 import java.util.concurrent.TimeUnit;
-
 import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.Before;
@@ -12,18 +12,17 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
-
-import check.driverWait;
-import pages.EducationIndustriesPage;
+import check.elementFind;
 import pages.IndustriesPage;
 import pages.TechnologyIndustriesPage;
 
-
-
+/**
+ * @author Aliaksandr Tozik
+ */
 public class TechnologyIndustriesPageTest {
 	  private WebDriver driver;
-	  private String baseUrl;
-	  private boolean acceptNextAlert = true;
+	  //private String baseUrl;
+	  //private boolean acceptNextAlert = true;
 	  private StringBuffer verificationErrors = new StringBuffer();
 	  private IndustriesPage page;
 	  private static final String PAGE_NAME="Software Company Industry Expertise - IT Development Services - Oxagile";
@@ -32,7 +31,7 @@ public class TechnologyIndustriesPageTest {
 	  @Before
 	  public void setUp() throws Exception {
 	    driver = new FirefoxDriver();	  
-	    baseUrl = "http://redesign-qa.oxagile.com/industries/";
+	    //baseUrl = "http://redesign-qa.oxagile.com/industries/";
 	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	    page = PageFactory.initElements(driver, IndustriesPage.class);
 	  }
@@ -40,11 +39,14 @@ public class TechnologyIndustriesPageTest {
 
 	  @Test
 	  public void testIndustriesPage() throws Exception {
-		  driverWait myWaiter = new driverWait();
+		  //driverWait myWaiter = new driverWait();
 		  
 		  log.debug("Open 'Industries' page");
 		  page.openIndustriesPage();
-		  myWaiter.wait(1000);
+		  //myWaiter.wait(1000);
+		  
+		  elementFind waiterForElement= new elementFind(driver);
+		  waiterForElement.waitForElement(page.getTitleXpath());
 		  if(!page.getTitle().equals(PAGE_NAME)){
 			  log.error("Incorrect page is opened");
 			  fail("Incorrect page is opened");
@@ -54,17 +56,17 @@ public class TechnologyIndustriesPageTest {
 		  
 		  TechnologyIndustriesPage technologyPage = page.clickTechnologyHyperlink();
 		  
-		  myWaiter.wait(2000);
+		  //myWaiter.wait(2000);
+		  
+		  waiterForElement= new elementFind(driver);
+		  waiterForElement.waitForElement(technologyPage.getTitleXpath());
 		  try{
 			  assertTrue(technologyPage.checkTitleOfTechnologyPage());
 		  }catch(AssertionError e){
 		    	log.error("Incorrect page is opened");
 		    	fail("Incorrect page is opened");
 		  }
-		  
-		  
-		  
-		  
+		  		  
 	    
 	  }
 
