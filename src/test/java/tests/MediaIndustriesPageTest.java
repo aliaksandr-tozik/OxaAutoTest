@@ -1,11 +1,5 @@
 package tests;
 
-//import java.util.regex.Pattern;
-//import static org.hamcrest.CoreMatchers.*;
-//import org.openqa.selenium.support.ui.Select;
-//import com.thoughtworks.selenium.webdriven.commands.IsElementPresent;
-//import pages.freeQuotePage;
-//import check.driverWait;
 import java.util.concurrent.TimeUnit;
 import org.junit.*;
 import static org.junit.Assert.*;
@@ -13,7 +7,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.apache.log4j.Logger;
-import check.elementFind;
+import check.ElementFind;
 import pages.IndustriesPage;
 import pages.MediaIndustriesPage;
 
@@ -40,12 +34,12 @@ public class MediaIndustriesPageTest {
 
   @Test
   public void testIndustriesPage() throws Exception {
-	  //driverWait myWaiter = new driverWait();
+	  
 	  
 	  log.debug("Open 'Industries' page");
 	  page.openIndustriesPage();
-	  //myWaiter.wait(1000);
-	  elementFind waiterForElement= new elementFind(driver);
+	  
+	  ElementFind waiterForElement= new ElementFind(driver);
 	  waiterForElement.waitForElement(page.getTitleXpath());
 	  if(!page.getTitle().equals(PAGE_NAME)){
 		  log.error("Incorrect page is opened");
@@ -56,8 +50,8 @@ public class MediaIndustriesPageTest {
 	  	  
 	  MediaIndustriesPage mediaPage = page.clickMediaHyperlink();
 	  	  
-	  //myWaiter.wait(2000);
-	  waiterForElement=new elementFind(driver);
+	  
+	  waiterForElement=new ElementFind(driver);
 	  waiterForElement.waitForElement(mediaPage.getTitleXpath());
 	  try{
 		  assertTrue(mediaPage.checkTitleOfMediaPage());

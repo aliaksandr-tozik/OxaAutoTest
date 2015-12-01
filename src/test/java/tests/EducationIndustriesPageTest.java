@@ -1,14 +1,5 @@
 package tests;
 
-
-
-//import java.util.regex.Pattern;
-//import static org.hamcrest.CoreMatchers.*;
-//import org.openqa.selenium.support.ui.Select;
-//import com.thoughtworks.selenium.webdriven.commands.IsElementPresent;
-//import check.driverWait;
-//import pages.MediaIndustriesPage;
-//import pages.freeQuotePage;
 import java.util.concurrent.TimeUnit;
 import org.junit.*;
 import static org.junit.Assert.*;
@@ -16,7 +7,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.apache.log4j.Logger;
-import check.elementFind;
+import check.ElementFind;
 import pages.EducationIndustriesPage;
 import pages.IndustriesPage;
 
@@ -43,13 +34,13 @@ public class EducationIndustriesPageTest {
 
   @Test
   public void testIndustriesPage() throws Exception {
-	  //driverWait myWaiter = new driverWait();
+	  
 	  
 	  log.debug("Open 'Industries' page");
 	  page.openIndustriesPage();
-	  //myWaiter.wait(1000);
 	  
-	  elementFind waiterForElement= new elementFind(driver);
+	  
+	  ElementFind waiterForElement= new ElementFind(driver);
 	  waiterForElement.waitForElement(page.getTitleXpath());
 	  if(!page.getTitle().equals(PAGE_NAME)){
 		  log.error("Incorrect page is opened");
@@ -60,9 +51,8 @@ public class EducationIndustriesPageTest {
 	  
 	  EducationIndustriesPage educationPage = page.clickEducationHyperlink();
 	  
-	  //myWaiter.wait(2000);
-	  
-	  waiterForElement= new elementFind(driver);
+	  	  
+	  waiterForElement= new ElementFind(driver);
 	  waiterForElement.waitForElement(educationPage.getTitleXpath());
 	  try{
 		  assertTrue(educationPage.checkTitleOfEducationPage());

@@ -1,8 +1,5 @@
 package tests;
 
-
-//import check.driverWait;
-//import pages.TechnologyIndustriesPage;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import java.util.concurrent.TimeUnit;
@@ -13,7 +10,7 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
-import check.elementFind;
+import check.ElementFind;
 import pages.FinanceIndustriesPage;
 import pages.IndustriesPage;
 
@@ -40,13 +37,13 @@ public class FinanceIndustriesPageTest {
 
 	  @Test
 	  public void testIndustriesPage() throws Exception {
-		  //driverWait myWaiter = new driverWait();
+		  
 		  
 		  log.debug("Open 'Industries' page");
 		  page.openIndustriesPage();
-		  //myWaiter.wait(1000);
 		  
-		  elementFind waiterForElement= new elementFind(driver);
+		  
+		  ElementFind waiterForElement= new ElementFind(driver);
 		  waiterForElement.waitForElement(page.getTitleXpath());
 		  if(!page.getTitle().equals(PAGE_NAME)){
 			  log.error("Incorrect page is opened");
@@ -57,9 +54,9 @@ public class FinanceIndustriesPageTest {
 		  
 		  FinanceIndustriesPage financePage = page.clickFinanceHyperlink();
 		  
-		  //myWaiter.wait(2000);
 		  
-		  waiterForElement= new elementFind(driver);
+		  
+		  waiterForElement= new ElementFind(driver);
 		  waiterForElement.waitForElement(financePage.getTitleXpath());
 		  try{
 			  assertTrue(financePage.checkTitleOfFinancePage());
