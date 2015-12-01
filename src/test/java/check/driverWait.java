@@ -1,6 +1,6 @@
 package check;
 
-public class driverWait {
+public class DriverWait {
     public void wait(int miliseconds){
         try {
             Thread.sleep(miliseconds);
