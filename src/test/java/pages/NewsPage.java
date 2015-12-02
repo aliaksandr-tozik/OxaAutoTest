@@ -1,6 +1,6 @@
 package pages;
 
-import check.elementFind;
+import check.ElementFind;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,11 +14,11 @@ import static org.junit.Assert.assertTrue;
  */
 public class NewsPage {
     public WebDriver driver;
-    elementFind waitForPageLoad;
+    ElementFind waitForPageLoad;
     public static Logger log = Logger.getLogger(NewsPage.class);
     public NewsPage(WebDriver driver) {
         this.driver = driver;
-        waitForPageLoad = new elementFind(driver);
+        waitForPageLoad = new ElementFind(driver);
     }
 
     private static final String header_xpath = "//div[contains(@class ,'inner-wrapper')]//h1";
