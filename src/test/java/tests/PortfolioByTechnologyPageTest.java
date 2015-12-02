@@ -36,7 +36,7 @@ public class PortfolioByTechnologyPageTest {
 
     @Test
     public void testPortfolioByTechnologyPage() {
-        log.debug("-----------Open NewsPage------------");
+        log.debug("-----------Open PortfolioByTechnologyPage------------");
         portfolioByTechnology.waitForPageLoad();
         log.debug("-----------Check Header-----------");
         portfolioByTechnology.checkHeader();
@@ -62,8 +62,6 @@ public class PortfolioByTechnologyPageTest {
         waiter.wait(1000);
         log.debug("-----------Check PHP Button click-----------");
         portfolioByTechnology.checkButtonClick(portfolioByTechnology.phpButton);
-
-
     }
 
     @After

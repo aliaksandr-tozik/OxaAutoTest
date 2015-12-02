@@ -46,15 +46,18 @@ public class PortfolioByTechnologyPage {
 
     public void checkHeader() {
         assertEquals(header.getText(), "By Technology");
+        log.debug("Header is displayed");
     }
     public void checkButtonHover(WebElement webelement) {
         action.moveToElement(webelement).perform();
         assertTrue(webelement.getCssValue("color").contains("201, 42, 58"));
+        log.debug("Hover is displayed");
     }
     public void checkButtonClick(WebElement webElement) {
         action.click(webElement).perform();
         waiter.wait(1000);
         assertEquals(driver.getTitle(), "Portfolio - Oxagile");
+        log.debug("Button is clicked");
     }
     public void waitForPageLoad() {
         waitForPageLoad.waitForElement(header_xpath);
