@@ -13,7 +13,7 @@ import static org.junit.Assert.assertTrue;
 /**
  * Created by zholnerkevichns on 28.11.2015.
  */
-public class contactsPage {
+public class ContactsPage {
 
     WebDriver driver;
     private elementFind check;
