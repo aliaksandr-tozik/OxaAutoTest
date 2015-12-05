@@ -15,6 +15,6 @@ public class freeQuoteMandatoryFields extends BaseTest {
         String textEmail = FreeQuotePage.mandatoryFieldEmail();
         assertTrue(textName.contains("Enter your name"));
         assertTrue(textEmail.contains("Enter your email"));
-    }/22
+    }
 }
 
