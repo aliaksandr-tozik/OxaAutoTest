@@ -35,21 +35,21 @@ public class ContactsPage {
 
 
 
-    public void mapCheck(){
+    public String mapCheckNY(){
         String srcMapHeadquarters;
         srcMapHeadquarters = imageMapHeadquarters.getAttribute("src");
-        assertTrue(srcMapHeadquarters.contains("York"));
+        return srcMapHeadquarters;
 
+    }
+
+    public String mapCheckBL(){
         String srcMapDevelopment;
         srcMapDevelopment = imageMapDevelopment.getAttribute("src");
-        assertTrue(srcMapDevelopment.contains("Belarus"));
+        return srcMapDevelopment;
     }
 
     public void waitForPageLoad(){
         check.waitForElement(HEADER_H1_XPATH);
     }
-
-
-
 
 }

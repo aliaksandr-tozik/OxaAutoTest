@@ -1,44 +1,18 @@
 package tests.freeQuote;
 
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.PageFactory;
-import pages.FreeQuotePage;
+import tests.BaseTest;
 
-import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.assertTrue;
 
-/**
- * Created by zholnerkevichns on 26.11.2015.
- */
-public class FreeQuoteSendRequest {
-    private WebDriver driver;
-    private String baseURL;
-    private FreeQuotePage freeQuotePage;
-
-
-
-    @Before
-    public void setUP() {
-        driver = new FirefoxDriver();
-        driver.manage().window().maximize();
-        baseURL = "http://redesign-qa.oxagile.com/free-quote/";
-        driver.get(baseURL);
-        freeQuotePage = PageFactory.initElements(driver, FreeQuotePage.class);
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-
-    }
-
+public class FreeQuoteSendRequest extends BaseTest {
 
     @Test
     public void sendOnlineRequest(){
-
+        driver.get(baseURL + "free-quote/");
         freeQuotePage.sendRequest();
         WebElement msgSuccess = driver.findElement(By.xpath("//div[contains(@class ,'request_sended_header')]"));
         String msgGoogleText = msgSuccess.getText();
@@ -46,8 +20,5 @@ public class FreeQuoteSendRequest {
     }
 
 
-    @After
-    public void tearDown(){
-        driver.quit();
-    }
+
 }
