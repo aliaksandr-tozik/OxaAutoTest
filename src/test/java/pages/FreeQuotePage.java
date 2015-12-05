@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * Created by zholnerkevichns on 26.11.2015.
  */
-public class freeQuotePage {
+public class FreeQuotePage {
 
     WebDriver driver;
     private check.DriverWait driverWait;
