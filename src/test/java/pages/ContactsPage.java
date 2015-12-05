@@ -17,7 +17,7 @@ public class ContactsPage {
 
     WebDriver driver;
     private ElementFind check;
-    public contactsPage(WebDriver driver) {
+    public ContactsPage(WebDriver driver) {
         this.driver = driver;
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         check = new ElementFind(driver);
