@@ -1,6 +1,5 @@
 package tests.freeQuote;
 
-import check.driverWait;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

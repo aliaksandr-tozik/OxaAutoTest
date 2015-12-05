@@ -1,7 +1,6 @@
 package pages;
 
-//import check.driverWait;
-//import check.elementFind;
+import check.DriverWait;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
@@ -10,7 +9,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 import java.util.concurrent.TimeUnit;
 
-import static org.junit.Assert.assertTrue;
 
 
 /**
@@ -19,10 +17,11 @@ import static org.junit.Assert.assertTrue;
 public class freeQuotePage {
 
     WebDriver driver;
-    private check.driverWait driverWait;
+    private check.DriverWait driverWait;
     public freeQuotePage(WebDriver driver) {
         this.driver = driver;
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        driverWait = new DriverWait();
 
     }
 
@@ -76,21 +75,30 @@ public class freeQuotePage {
         } catch (InterruptedException ex) {}
     }
 
-    public void mandatoryFields(){
+    public void mandatoryFieldCheck(){
         btnSend.click();
         driverWait.wait(3000);
-        assertTrue(errorMsgName.getText().contains("Enter your name"));
+    }
+
+    public String mandatoryFieldName(){
+        String errorName = errorMsgName.getText();
+        return errorName;
+    }
+
+    public String mandatoryFieldEmail(){
         fieldName.sendKeys("Mikalai");
         btnSend.click();
-        assertTrue(errorMsgEmail.getText().contains("Enter your email"));
+        String errorEmail = errorMsgEmail.getText();
+        return errorEmail;
     }
+
+
 
     public void fileAttach(){
         btnAttachFile.sendKeys("C:\\Users\\Public\\Pictures\\Sample Pictures\\Chrysanthemum.jpg");
     }
 
     public void captureDrag(){
-
         Actions move = new Actions(driver);
         for (int i = 0; i<20; i++){
             Action action = move.dragAndDropBy(sliderPointer, 30, 0).build();
@@ -101,8 +109,6 @@ public class freeQuotePage {
     public void formReset(){
         btnReset.click();
     }
-
-
 
 }
 
