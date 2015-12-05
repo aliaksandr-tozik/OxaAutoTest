@@ -16,7 +16,7 @@ import static org.junit.Assert.assertTrue;
 /**
  * Created by zholnerkevichns on 26.11.2015.
  */
-public class freeQuotePage {
+public class FreeQuotePage {
 
     WebDriver driver;
     private check.driverWait driverWait;
