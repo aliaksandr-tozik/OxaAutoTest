@@ -18,7 +18,7 @@ public class FreeQuotePage {
 
     WebDriver driver;
     private check.DriverWait driverWait;
-    public freeQuotePage(WebDriver driver) {
+    public FreeQuotePage(WebDriver driver) {
         this.driver = driver;
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         driverWait = new DriverWait();

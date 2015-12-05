@@ -6,7 +6,7 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
-import pages.contactsPage;
+import pages.ContactsPage;
 
 import java.util.concurrent.TimeUnit;
 
@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 public class contactsMapTest {
     private WebDriver driver;
     private String baseURL;
-    private contactsPage contactsPage;
+    private ContactsPage contactsPage;
 
 
     @Before
@@ -25,7 +25,7 @@ public class contactsMapTest {
         driver.manage().window().maximize();
         baseURL = "http://redesign-qa.oxagile.com/contacts/";
         driver.get(baseURL);
-        contactsPage = PageFactory.initElements(driver, contactsPage.class);
+        contactsPage = PageFactory.initElements(driver, ContactsPage.class);
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 
     }

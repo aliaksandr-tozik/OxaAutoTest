@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 
 public abstract class BaseTest {
     protected WebDriver driver;
-    public FreeQuotePage freeQuotePage;
+    public FreeQuotePage FreeQuotePage;
     public ContactsPage contactsPage;
     public String baseURL;
 
@@ -25,7 +25,7 @@ public abstract class BaseTest {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
         contactsPage = PageFactory.initElements(driver, ContactsPage.class);
-        freeQuotePage = PageFactory.initElements(driver, FreeQuotePage.class);
+        FreeQuotePage = PageFactory.initElements(driver, FreeQuotePage.class);
     }
 
     @After

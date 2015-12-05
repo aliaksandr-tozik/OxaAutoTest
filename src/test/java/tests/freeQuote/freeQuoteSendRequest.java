@@ -20,7 +20,7 @@ import static org.junit.Assert.assertTrue;
 public class freeQuoteSendRequest {
     private WebDriver driver;
     private String baseURL;
-    private FreeQuotePage freeQuotePage;
+    private FreeQuotePage FreeQuotePage;
 
 
 
@@ -30,7 +30,7 @@ public class freeQuoteSendRequest {
         driver.manage().window().maximize();
         baseURL = "http://redesign-qa.oxagile.com/free-quote/";
         driver.get(baseURL);
-        freeQuotePage = PageFactory.initElements(driver, FreeQuotePage.class);
+        FreeQuotePage = PageFactory.initElements(driver, FreeQuotePage.class);
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 
     }
@@ -39,7 +39,7 @@ public class freeQuoteSendRequest {
     @Test
     public void sendOnlineRequest(){
 
-        freeQuotePage.sendRequest();
+        FreeQuotePage.sendRequest();
         WebElement msgSuccess = driver.findElement(By.xpath("//div[contains(@class ,'request_sended_header')]"));
         String msgGoogleText = msgSuccess.getText();
         assertTrue(msgGoogleText.contains("successfully received"));
