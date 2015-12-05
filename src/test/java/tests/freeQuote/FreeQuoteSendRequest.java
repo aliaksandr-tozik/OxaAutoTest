@@ -1,6 +1,5 @@
 package tests.freeQuote;
 
-import check.driverWait;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -9,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
-import pages.freeQuotePage;
+import pages.FreeQuotePage;
 
 import java.util.concurrent.TimeUnit;
 
@@ -18,10 +17,10 @@ import static org.junit.Assert.assertTrue;
 /**
  * Created by zholnerkevichns on 26.11.2015.
  */
-public class freeQuoteSendRequest {
+public class FreeQuoteSendRequest {
     private WebDriver driver;
     private String baseURL;
-    private freeQuotePage freeQuotePage;
+    private FreeQuotePage freeQuotePage;
 
 
 
@@ -31,7 +30,7 @@ public class freeQuoteSendRequest {
         driver.manage().window().maximize();
         baseURL = "http://redesign-qa.oxagile.com/free-quote/";
         driver.get(baseURL);
-        freeQuotePage = PageFactory.initElements(driver, freeQuotePage.class);
+        freeQuotePage = PageFactory.initElements(driver, FreeQuotePage.class);
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 
     }
