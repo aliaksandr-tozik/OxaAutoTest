@@ -1,21 +1,22 @@
 package tests.contacts;
 
-import check.elementFind;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
+import pages.ContactsPage;
+
 import java.util.concurrent.TimeUnit;
 
 /**
  * Created by zholnerkevichns on 29.11.2015.
  */
-public class contactsMapTest {
+public class ContactsMapTest {
     private WebDriver driver;
     private String baseURL;
-    private pages.contactsPage contactsPage;
+    private ContactsPage contactsPage;
 
 
     @Before
@@ -24,7 +25,7 @@ public class contactsMapTest {
         driver.manage().window().maximize();
         baseURL = "http://redesign-qa.oxagile.com/contacts/";
         driver.get(baseURL);
-        contactsPage = PageFactory.initElements(driver, pages.contactsPage.class);
+        contactsPage = PageFactory.initElements(driver, ContactsPage.class);
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 
     }
