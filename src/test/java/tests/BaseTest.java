@@ -7,7 +7,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
 import pages.ContactsPage;
 import pages.FreeQuotePage;
-
 import java.util.concurrent.TimeUnit;
 
 

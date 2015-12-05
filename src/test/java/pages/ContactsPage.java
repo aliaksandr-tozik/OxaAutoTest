@@ -1,14 +1,11 @@
 package pages;
 
 import check.ElementFind;
-import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
 import java.util.concurrent.TimeUnit;
 
-import static org.junit.Assert.assertTrue;
 
 /**
  * Created by zholnerkevichns on 28.11.2015.
