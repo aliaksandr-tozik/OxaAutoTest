@@ -1,6 +1,6 @@
 package pages;
 
-import check.elementFind;
+import check.ElementFind;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -16,11 +16,11 @@ import static org.junit.Assert.assertTrue;
 public class ContactsPage {
 
     WebDriver driver;
-    private elementFind check;
+    private ElementFind check;
     public contactsPage(WebDriver driver) {
         this.driver = driver;
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-        check = new elementFind(driver);
+        check = new ElementFind(driver);
 
     }
 
