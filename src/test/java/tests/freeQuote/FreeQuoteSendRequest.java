@@ -3,12 +3,19 @@ package tests.freeQuote;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
+import pages.FreeQuotePage;
 import tests.BaseTest;
 
 
 import static org.junit.Assert.assertTrue;
 
 public class FreeQuoteSendRequest extends BaseTest {
+
+    @Override
+    public void pageFactory(){
+        freeQuotePage = PageFactory.initElements(driver, FreeQuotePage.class);
+    }
 
     @Test
     public void sendOnlineRequest(){
