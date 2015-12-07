@@ -7,12 +7,14 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import pages.ContactsPage;
 import pages.FreeQuotePage;
 import java.util.concurrent.TimeUnit;
+import pages.IndustriesPage;;
 
 
 public abstract class BaseTest {
     protected WebDriver driver;
     public FreeQuotePage freeQuotePage;
     public ContactsPage contactsPage;
+    public IndustriesPage industriesPage;
     public String baseURL;
 
     public abstract void pageFactory();
