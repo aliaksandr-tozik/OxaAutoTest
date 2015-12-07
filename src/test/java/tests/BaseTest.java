@@ -19,8 +19,8 @@ public abstract class BaseTest {
 
     @Before
     public void setUp() throws Exception {
-        pageFactory();
         driver = new FirefoxDriver();
+        pageFactory();
         baseURL = "http://redesign-qa.oxagile.com/";
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
