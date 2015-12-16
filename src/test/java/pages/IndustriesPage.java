@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 //import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -66,6 +67,17 @@ public class IndustriesPage {
 	public FinanceIndustriesPage clickFinanceHyperlink(){
 		financeHyperlink.click();
 		return new FinanceIndustriesPage(driver);
+	}
+	public void clickLink(String xpath){
+		driver.findElement(By.xpath(xpath)).click();
+		
+	}
+	public boolean checkText(String text){
+		
+		if(driver.getTitle().equals(text)){
+			return true;
+		}
+		return false;
 	}
 
 }

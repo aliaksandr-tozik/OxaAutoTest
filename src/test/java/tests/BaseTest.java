@@ -1,7 +1,8 @@
 package tests;
 
-import org.junit.After;
-import org.junit.Before;
+//import org.junit.After;
+//import org.junit.Before;
+import org.testng.annotations.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import pages.ContactsPage;
@@ -19,7 +20,7 @@ public abstract class BaseTest {
 
     public abstract void pageFactory();
 
-    @Before
+    @BeforeMethod
     public void setUp() throws Exception {
         driver = new FirefoxDriver();
         pageFactory();
@@ -29,7 +30,7 @@ public abstract class BaseTest {
         driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
     }
 
-    @After
+    @AfterMethod
     public void tearDown(){
         driver.quit();
     }

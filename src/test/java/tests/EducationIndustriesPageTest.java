@@ -1,6 +1,8 @@
 package tests;
 
-import org.junit.*;
+//import org.junit.*;
+import org.testng.annotations.*;
+
 import static org.junit.Assert.*;
 import org.openqa.selenium.support.PageFactory;
 import org.apache.log4j.Logger;

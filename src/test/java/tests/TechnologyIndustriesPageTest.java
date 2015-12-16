@@ -4,7 +4,9 @@ package tests;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import org.apache.log4j.Logger;
-import org.junit.Test;
+//import org.junit.Test;
+import org.testng.annotations.*;
+
 import org.openqa.selenium.support.PageFactory;
 import check.ElementFind;
 import pages.IndustriesPage;
