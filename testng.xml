@@ -6,7 +6,9 @@
     <classes>
       <!--<class name="tests.EducationIndustriesPageTest" />-->
      <!--<class name="tests.FinanceIndustriesPageTest" />-->
-      <class name="tests.MediaIndustriesPageTest" />
+      <!--<class name="tests.MediaIndustriesPageTest" />-->
+        <class name="tests.TestsWithReport" />
+        <!--<class name="tests.MyReport" />-->
       <!--<class name="tests.TechnologyIndustriesPageTest" />-->
    </classes>
 
